@@ -1,0 +1,137 @@
+/* The 36px marquee strip between the message flow and the composer. */
+.bar {
+  position: relative;
+  z-index: 40;
+  height: 36px;
+  flex: none;
+  overflow: hidden;
+  background: rgba(127, 127, 127, 0.08);
+  border-top: 1px solid rgba(127, 127, 127, 0.16);
+  border-bottom: 1px solid rgba(127, 127, 127, 0.16);
+}
+
+.viewport {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  flex: none;
+  height: 100%;
+  will-change: transform;
+}
+
+.group {
+  display: inline-flex;
+  flex: none;
+  height: 100%;
+}
+
+/* One quote cell. */
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 12px;
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(127, 127, 127, 0.14);
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+.code {
+  font-size: 11px;
+  opacity: 0.72;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.price {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 300ms price-update pop. */
+@keyframes ticker-flash {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.22);
+    filter: brightness(1.45);
+  }
+  100% {
+    transform: scale(1);
+    filter: none;
+  }
+}
+
+.flash {
+  animation: ticker-flash 300ms ease-out;
+}
+
+.capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-bottom: 5px solid;
+}
+
+.triangleDown {
+  transform: rotate(180deg);
+}
+
+/* Single-source failure: only this cell grays. */
+.stale {
+  opacity: 0.45;
+  filter: grayscale(1);
+}
+
+/* Whole-flow failure: everything grays plus the meta cell. */
+.broken .item {
+  opacity: 0.55;
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 11px;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+.pending,
+.errorText {
+  font-size: 11px;
+  opacity: 0.62;
+}

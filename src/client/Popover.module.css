@@ -1,0 +1,360 @@
+/* Shared styles for the header trigger, both popovers, and the settings section. */
+
+/* Portal layer shared by the manage and detail popovers. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.panel {
+  position: fixed;
+  z-index: 60;
+  width: 304px;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid rgba(127, 127, 127, 0.28);
+  border-radius: 10px;
+  background: rgba(30, 30, 34, 0.94);
+  color: #e8e8ea;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  font-size: 12.5px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.close:hover {
+  background: rgba(127, 127, 127, 0.18);
+  opacity: 1;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-size: 11px;
+  opacity: 0.66;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.muted {
+  font-size: 11.5px;
+  opacity: 0.55;
+}
+
+/* Selected-symbol list. */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px;
+  border-radius: 6px;
+  background: rgba(127, 127, 127, 0.06);
+}
+
+.row:hover {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+.dragging {
+  opacity: 0.5;
+  outline: 1px dashed rgba(127, 127, 127, 0.5);
+}
+
+.dragHandle {
+  cursor: grab;
+  color: rgba(127, 127, 127, 0.8);
+  user-select: none;
+  font-size: 10px;
+  letter-spacing: -1px;
+  padding: 0 2px;
+}
+
+.checkRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  flex: none;
+}
+
+.symbolCode {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.symbolName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.62;
+  font-size: 11.5px;
+}
+
+.remove {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.remove:hover {
+  background: rgba(229, 72, 77, 0.2);
+  opacity: 1;
+}
+
+/* Add input + suggestions. */
+.addInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid rgba(127, 127, 127, 0.35);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.22);
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.addInput:focus {
+  border-color: rgba(110, 140, 255, 0.75);
+}
+
+.hint {
+  margin-top: 5px;
+  font-size: 11px;
+  opacity: 0.55;
+  line-height: 1.45;
+}
+
+.suggestList {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.suggestGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestHeader {
+  padding: 3px 6px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+.suggestItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.suggestItem:hover {
+  background: rgba(127, 127, 127, 0.16);
+}
+
+/* Segmented controls. */
+.segment {
+  display: inline-flex;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.segmentButton {
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.segmentButton + .segmentButton {
+  border-left: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+.segmentButton:hover {
+  background: rgba(127, 127, 127, 0.14);
+}
+
+.segmentButton.active {
+  background: rgba(110, 140, 255, 0.28);
+  font-weight: 650;
+}
+
+.speedRange {
+  width: 100%;
+}
+
+.speedLabels {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Header trigger. */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  border-radius: 8px;
+  background: rgba(127, 127, 127, 0.07);
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.trigger:hover {
+  background: rgba(127, 127, 127, 0.16);
+}
+
+/* Settings section. */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 3px 9px;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pointsInput {
+  width: 120px;
+  padding: 5px 8px;
+  border: 1px solid rgba(127, 127, 127, 0.35);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.18);
+  color: inherit;
+  font: inherit;
+}
+
+/* Detail popover. */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.bigPrice {
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.changeLine {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.sparkline {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  min-height: 56px;
+  align-items: center;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.danger {
+  padding: 5px 12px;
+  border: 1px solid rgba(229, 72, 77, 0.6);
+  border-radius: 7px;
+  background: rgba(229, 72, 77, 0.12);
+  color: #f2a6a9;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.danger:hover {
+  background: rgba(229, 72, 77, 0.25);
+}
