@@ -1,5 +1,7 @@
 # dsh-fun-ticker
 
+**Author / Maintainer:** [@Zacklinkk](https://github.com/Zacklinkk)
+
 DSH（DeepSeek Harness）行情跑马灯插件：会话底部一条常驻横向跑马灯，加密 / 汇率 / A股 / 指数 / 港美股任意组合，用户自主增删标的；点击条目查看明细（含迷你 sparkline）。全部数据免费免 key，客户端不直连上游 —— 宿主侧代理 + 缓存。
 
 > 本仓库为 DSH monorepo 中 `packages/fun/ticker` 的单包快照。源码与该目录内容一致，可直接放回 monorepo 的 `packages/fun/ticker/` 目录构建。
